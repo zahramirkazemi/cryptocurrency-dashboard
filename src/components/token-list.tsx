@@ -18,10 +18,6 @@ const TokenList: React.FC = () => {
   const { isLoading, hasMore, tokens, fetchTokens } = useTokensStore();
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    fetchTokens(page);
-  }, []);
-
   const onNextPage = React.useCallback(() => {
     if (hasMore) {
       fetchTokens(page + 1);
